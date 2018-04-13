@@ -14,6 +14,10 @@ class HomePage(Page):
         FieldPanel('body', classname="full"),
     ]
 
+    def get_updates(self):
+        p = Page.objects.get(slug='blog')
+        return p.get_descendants().order_by('-blogpage__date')[:3]
+
 
 class StaticPage(Page):
     body = RichTextField(blank=True)

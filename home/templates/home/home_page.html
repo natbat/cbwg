@@ -25,6 +25,14 @@
 {% block content %}
   <div class="primary">
     <h2 class="header2">CBWG Updates</h2>
+    {% for entry in self.get_updates %}
+    <div>
+      <h3>
+        <a href="{{ entry.url }}">{{ entry.title }}</a>
+        - {{ entry.blogpage.date }}
+      </h3>
+      <p>{{ entry.blogpage.intro }}</p>
+    {% endfor %}
   </div>
   <div class="secondary">
     <h2 class="header2">Regional groups</h2>
