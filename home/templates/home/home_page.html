@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block precontent %}
+  <section class="precontent">
+    <div class="inner">
+      <div class="primary">
+        <p>mission statement</p>
+      </div>
+      <div class="secondary">
+        <p>signup form</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+<!--<section class="content">{{ page.body|richtext }}</section>-->
+
+{% block content %}
+  <div class="primary">
+    <p>top updates</p>
+  </div>
+  <div class="secondary">
+    <p>Regional groups</p>
+  </div>
+{% endblock %}
+
+{% block postcontent %}
+  <section class="postcontent">
+    <div class="inner">
+      <div class="primary">
+        <p>initiaitives</p>
+      </div>
+      <div class="secondary">
+        <p>signup form</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
