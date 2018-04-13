@@ -8,7 +8,7 @@ name = "pypi"
 [packages]
 
 django = "<1.12,>=1.11"
-wagtail = "<1.14,>=1.13"
+wagtail = "==2.0.1"
 "psycopg2-binary" = "*"
 django-heroku = "*"
 raven = "*"
