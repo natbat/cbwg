@@ -161,6 +161,18 @@ header nav a:active,
 header nav a.active {
   border-color: #1EC59D;
 }
+header .logo img {
+  width: 100%;
+  max-width: 300px;
+}
+header a.logo:link,
+header a.logo:visited,
+header a.logo:hover,
+header a.logo:focus,
+header a.logo:active {
+  display: block;
+  width: 100%;
+}
 
 /* Footer */
 footer,
@@ -250,7 +262,7 @@ header nav {
 
   /* Header */
   header .logo  {
-    grid-column: col 1;
+    grid-column: col 1 / span 2;
     grid-row: 1 / span 2;
     margin-bottom: 0;
   }
