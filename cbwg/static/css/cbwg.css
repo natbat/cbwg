@@ -132,8 +132,12 @@ header li {
   display: inline-block;
   padding-bottom: 0;
   margin-right: 0.875rem;
+  text-transform: lowercase;
   vertical-align: bottom;
   font-size: 0.875rem
+}
+header nav {
+  margin-top: 2em
 }
 header nav a:link,
 header nav a:visited,
@@ -203,6 +207,7 @@ footer nav a:active {
 header .logo,
 header nav {
   grid-column: col 1 / span 3;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 50em) {
@@ -215,10 +220,12 @@ header nav {
   .primary {
     grid-column: col 1 / span 4;
     grid-row: 1;
+    margin-bottom: 0;
   }
   .secondary {
     grid-column: col 5 / span 2;
     grid-row: 1;
+    margin-bottom: 0;
   }
 
   /* Precontent */
@@ -245,10 +252,12 @@ header nav {
   header .logo  {
     grid-column: col 1;
     grid-row: 1 / span 2;
+    margin-bottom: 0;
   }
   header nav {
     grid-column: col 3 / span 4;
     grid-row: 2;
+    margin-bottom: 0;
   }
 }
 
