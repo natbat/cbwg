@@ -326,3 +326,8 @@ p {
 .postcontent {
   background-color: #1EC59D
 }
+
+.areamap img {
+  display: block;
+  width: 50%;
+}

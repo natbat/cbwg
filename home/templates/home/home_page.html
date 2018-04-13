@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags %}
 
 {% block precontent %}
   <section class="precontent">
@@ -35,7 +35,7 @@
   </div>
   <div class="secondary">
     <h2 class="header2">Regional groups</h2>
-    <p><a href-"/regional-groups/"><img src="{% static 'img/cal.png' %}" alt="See a list of regional groups"></a>
+    <p class="areamap"><a href="/regional-groups/"><img src="{% static 'img/cal.png' %}" alt="See a list of regional groups"></a></p>
   </div>
 {% endblock %}
 
