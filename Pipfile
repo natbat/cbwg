@@ -13,7 +13,8 @@ wagtail = "==2.0.1"
 django-heroku = "*"
 raven = "*"
 gunicorn = "*"
-
+django-storages = "*"
+"boto3" = "*"
 
 [dev-packages]
 
