@@ -1,2 +1,2 @@
-release: DJANGO_SETTINGS_MODULE="cbwg.settings.dev" python manage.py migrate
-web: DJANGO_SETTINGS_MODULE="cbwg.settings.dev" gunicorn cbwg.wsgi --log-file -
+release: DJANGO_SETTINGS_MODULE="cbwg.settings.production" python manage.py migrate
+web: DJANGO_SETTINGS_MODULE="cbwg.settings.production" gunicorn cbwg.wsgi --log-file -
