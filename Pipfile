@@ -1,0 +1,22 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+django = "<1.12,>=1.11"
+wagtail = "<1.14,>=1.13"
+"psycopg2-binary" = "*"
+django-heroku = "*"
+
+
+[dev-packages]
+
+
+
+[requires]
+
+python_version = "3.6"
