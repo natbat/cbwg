@@ -214,6 +214,7 @@ footer nav a:active {
   width: 100%;
   margin: 0 auto;
 }
+.full,
 .primary,
 .secondary,
 header .logo,
@@ -236,6 +237,11 @@ header nav {
   }
   .secondary {
     grid-column: col 5 / span 2;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+  .full {
+    grid-column: col 1 / span 6;
     grid-row: 1;
     margin-bottom: 0;
   }
