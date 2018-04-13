@@ -6,6 +6,7 @@
 # I want the blog tag index page to show the tags that I use, not the list of blog entries
 # a blog tag page should show blog entries and related tags?
 
+    <div class="full">
     {% if request.GET.tag|length %}
         <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
     {% endif %}
@@ -23,5 +24,6 @@
     {% empty %}
         No pages found with that tag.
     {% endfor %}
-
+  </div>
+  
 {% endblock %}
