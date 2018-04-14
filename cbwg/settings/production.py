@@ -10,6 +10,7 @@ try:
 except ImportError:
     pass
 
+SECURE_SSL_REDIRECT = True
 
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
