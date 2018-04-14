@@ -18,8 +18,9 @@
               {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
           {% endwith %}
 
-          <p>{{ post.intro }}</p>
-          {{ post.body|richtext }}
+          <p class="intro">{{ post.intro }}</p>
+
+          <p><a href="{% pageurl post %}">Read more</a></p>
 
         {% endwith %}
       {% endfor %}
@@ -27,7 +28,6 @@
     </div>
 
     <div class="secondary">
-      <!-- TODO: tag cloud and maybe a calendar --><br><br>
-      tag cloud goes here
+      <!-- TODO: tag cloud and maybe a calendar -->
     </div>
 {% endblock %}

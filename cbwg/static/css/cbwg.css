@@ -79,6 +79,53 @@ h6 {
   padding: 0
 }
 
+/* Helper styles */
+.intro {
+  font-size: 1.25rem
+}
+p {
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+}
+
+h1,
+.header1 {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
+h2,
+.header2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
+h3,
+.header3 {
+  margin: 1rem 0 0.25rem 0;
+}
+h4,
+.header4 {
+  margin: 1rem 0 0.25rem 0;
+  font-weight: 400;
+  text-decoration: underline;
+}
+h5,
+.header5 {
+  margin: 1rem 0 0.25rem 0;
+  font-family: 'Nunito', Avenir, sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+}
+h6,
+.header6 {
+  margin: 1rem 0 0.25rem 0;
+  font-family: 'Nunito', Avenir, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: underline;
+}
+
 div,
 section,
 article,
@@ -98,11 +145,6 @@ article {
 }
 
 
-a img {
-	border: 0;
-	vertical-align: bottom;
-}
-
 a:link,
 a:visited {
 	color: #1EC59D;
@@ -113,6 +155,11 @@ a:focus,
 a:active  {
 	color: #1EC59D;
 	text-decoration: underline;
+}
+
+a img {
+	border: 0;
+	vertical-align: bottom;
 }
 
 .content {
@@ -279,36 +326,7 @@ header nav {
   }
 }
 
-/* Helper styles */
-.intro {
-  font-size: 1.25rem
-}
-p {
-  margin: 0 0 0.75rem 0;
-  padding: 0;
-}
-.header1 {
-  font-size: 3rem;
-  margin-bottom: 0.75rem;
-  margin-top: 1rem;
-}
-.header2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  margin-top: 1rem;
-}
-.header3 {
 
-}
-.header4 {
-
-}
-.header5 {
-
-}
-.header6 {
-
-}
 
 /* Precontent */
 .precontent {
