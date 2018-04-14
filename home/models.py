@@ -15,7 +15,7 @@ class HomePage(Page):
     ]
 
     def get_updates(self):
-        p = Page.objects.get(slug='blog')
+        p = Page.objects.get(slug='updates')
         return p.get_descendants().order_by('-blogpage__date')[:3]
 
 
