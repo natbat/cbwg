@@ -57,7 +57,7 @@ table {
 /* end reset */
 
 body {
-	color: #F1EDEE; /* background color set with footer */
+	color: #3494CC; /* background color set with footer */
 	margin: 0;
 	padding: 0;
 	font-family: 'Nunito', Avenir, sans-serif;
@@ -147,13 +147,13 @@ article {
 
 a:link,
 a:visited {
-	color: #1EC59D;
+	color: #3494CC;
 	text-decoration: underline;
 }
 a:hover,
 a:focus,
 a:active  {
-	color: #1EC59D;
+	color: #3494CC;
 	text-decoration: underline;
 }
 
@@ -163,13 +163,13 @@ a img {
 }
 
 .content {
-  background-color: #F1EDEE;
-  color: #092841
+  background-color: white;
+  color: #1C5271
 }
 
 header {
-	background-color: #0D3E66;
-  color: #F1EDEE;
+	background-color: #3494CC;
+  color: white;
 }
 
 header ul {
@@ -191,10 +191,10 @@ header nav a:visited,
 header nav a:hover,
 header nav a:focus,
 header nav a:active {
-  color: #F1EDEE;
+  color: white;
   text-decoration: none;
   border-width: 0 0 0.5rem 0;
-  border-color: #0D3E66;
+  border-color: transparent;
   border-style: solid;
   padding-bottom: 0.25rem;
   display: block;
@@ -202,11 +202,11 @@ header nav a:active {
 
 header nav a:hover,
 header nav a:focus {
-  border-color: #168282;
+  border-color: rgba(0,0,0,0.2);
 }
 header nav a:active,
 header nav a.active {
-  border-color: #1EC59D;
+  border-color: rgba(0,0,0,0.3);
 }
 header .logo img {
   width: 100%;
@@ -224,7 +224,8 @@ header a.logo:active {
 /* Footer */
 footer,
 body {
-  background-color: #0D3E66
+  background-color: #3494CC;
+  color: white;
 }
 footer {
   font-size: 0.875rem
@@ -244,13 +245,13 @@ footer li {
 
 footer nav a:link,
 footer nav a:visited {
-  color: #F1EDEE;
+  color: white;
   text-decoration: none;
 }
-footer nav a:hover
+footer nav a:hover,
 footer nav a:focus,
 footer nav a:active {
-  color: #FFFFFF;
+  color: rgba(255,255,255,0.8);
 }
 
 /* Primary grid setup */
@@ -330,7 +331,8 @@ header nav {
 
 /* Precontent */
 .precontent {
-  background-color: #DB5461;
+  background-color: white;
+  color: #3494CC
 }
 .precontent .inner{
   padding-top: 1rem;
@@ -342,8 +344,17 @@ header nav {
 
 /* Postcontent */
 .postcontent {
-  background-color: #1EC59D
+  background-color: #F9E74D;
+  color: black;
 }
+.postcontent a:link,
+.postcontent a:visited,
+.postcontent a:hover,
+.postcontent a:focus,
+.postcontent a:active {
+  color: black;
+}
+
 
 .areamap img {
   display: block;
