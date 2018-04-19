@@ -333,7 +333,6 @@ header nav {
     grid-gap: 2%;
     grid-template-columns: repeat(6, [col] 15% );
     width: 90%;
-    background: pink
   }
   .primary {
     grid-column: col 1 / span 4;
@@ -395,7 +394,6 @@ header nav {
 @media (min-width: 50rem) {
   .inner  {
     width: 80%;
-    background: red
   }
   header .vestigial {
     display: inline-block;
@@ -405,6 +403,5 @@ header nav {
 @media (min-width: 60rem) {
   .inner  {
     width: 70%;
-    background: yellow
   }
 }
