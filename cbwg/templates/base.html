@@ -33,18 +33,18 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        <header>
+        <header class="wrapper">
           <div class="inner">
             <p class="logo"><a href="/"><img src="{% static 'img/cbwg-logo.png' %}" alt="California Bat Working group"></a></p>
 
             <nav>
               <ul>
-                <li><a href="/">Home</a></li>
+                <li class="vestigial"><a href="/">Home</a></li>
                 <li><a href="/about/">About</a></li>
                 <li><a href="/regional-groups/">Regional groups</a></li>
                 <li><a href="/updates/">Updates</a></li>
                 <li><a href="/resources/">Resources</a></li>
-                <li><a href="/contact/">Contact</a></li>
+                <li class="vestigial"><a href="/contact/">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -52,11 +52,11 @@
 
         {% block precontent %}{% endblock %}
 
-        <section class="content"><div class="inner">{% block content %}{% endblock %}</div></section>
+        <section class="content wrapper"><div class="inner">{% block content %}{% endblock %}</div></section>
 
         {% block postcontent %}{% endblock %}
 
-        <footer>
+        <footer class="wrapper">
           <div class="inner">
             <div class="full">
               <nav>

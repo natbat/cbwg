@@ -66,6 +66,17 @@ body {
 	line-height: 1.25;
 }
 
+
+
+/* Helper styles */
+.intro {
+  font-size: 1rem;
+}
+p {
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -78,16 +89,6 @@ h6 {
   margin: 0;
   padding: 0
 }
-
-/* Helper styles */
-.intro {
-  font-size: 1.25rem
-}
-p {
-  margin: 0 0 0.75rem 0;
-  padding: 0;
-}
-
 h1,
 .header1 {
   font-size: 3rem;
@@ -131,15 +132,8 @@ section,
 article,
 header,
 nav,
-footer {
-  display: block;
-  box-sizing: content-box;
-}
-/* General */
-
-div,
-section,
-article {
+footer,
+.wrapper {
 	display: block;
 	box-sizing: border-box;
 }
@@ -171,20 +165,26 @@ header {
 	background-color: #3494CC;
   color: white;
 }
-
+header nav {
+  margin-top: 0.5rem
+}
 header ul {
-  text-align: right;
+  text-align: center;
 }
 header li {
   display: inline-block;
   padding-bottom: 0;
   margin-right: 0.875rem;
+  margin-right: 0.875rem;
   text-transform: lowercase;
   vertical-align: bottom;
   font-size: 0.875rem
 }
-header nav {
-  margin-top: 2em
+header li:last-child {
+  margin-right: 0
+}
+header .vestigial {
+  display: none;
 }
 header nav a:link,
 header nav a:visited,
@@ -208,15 +208,18 @@ header nav a:active,
 header nav a.active {
   border-color: rgba(0,0,0,0.3);
 }
+header .logo {
+  text-align: center;
+}
 header .logo img {
   width: 100%;
   max-width: 300px;
 }
-header a.logo:link,
-header a.logo:visited,
-header a.logo:hover,
-header a.logo:focus,
-header a.logo:active {
+header .logo a:link,
+header .logo a:visited,
+header .logo a:hover,
+header .logo a:focus,
+header .logo a:active {
   display: block;
   width: 100%;
 }
@@ -234,13 +237,14 @@ footer .inner {
   padding-top: 1rem;
   padding-bottom: 3rem
 }
-footer ul,
-footer li {
-  display: inline;
+footer ul{
   text-transform: lowercase;
+  line-height: 1.8rem;
 }
 footer li {
-  margin-right: 1rem
+  margin-right: 1rem;
+  display: inline-block;
+  text-transform: lowercase;
 }
 
 footer nav a:link,
@@ -255,28 +259,81 @@ footer nav a:active {
 }
 
 /* Primary grid setup */
+.wrapper {
+  padding: 0 1em;
+}
 .inner  {
   display: grid;
-  grid-gap: 2%;
+  grid-gap: 5%;
   grid-template-columns: repeat(3, [col] 30% );
   width: 100%;
   margin: 0 auto;
+
 }
-.full,
+.full {
+  grid-column: col 1 / span 3;
+}
 .primary,
-.secondary,
-header .logo,
-header nav {
+.secondary {
   grid-column: col 1 / span 3;
   margin-bottom: 1rem;
 }
+header .logo,
+header nav {
+  grid-column: col 1 / span 3;
+  margin-bottom: 0;
+}
 
-@media (min-width: 50em) {
+/* Precontent */
+.precontent {
+  background-color: white;
+  color: #3494CC
+}
+.precontent .inner {
+  padding-top: 1rem;
+  padding-bottom: 1px;
+}
+.precontent .header2 {
+  margin-top: 0
+}
+
+/* Postcontent */
+.postcontent {
+  background-color: #F9E74D;
+  color: black;
+}
+.postcontent a:link,
+.postcontent a:visited,
+.postcontent a:hover,
+.postcontent a:focus,
+.postcontent a:active {
+  color: black;
+}
+
+
+.areamap img {
+  display: block;
+  width: 50%;
+}
+
+
+@media (min-width: 30rem) {
+  .intro {
+    font-size: 1.125rem
+  }
+}
+
+@media (min-width: 40rem) {
+  .intro {
+    font-size: 1.25rem
+  }
+
   /* Grid setup */
   .inner  {
     grid-gap: 2%;
     grid-template-columns: repeat(6, [col] 15% );
-    width: 70%;
+    width: 90%;
+    background: pink
   }
   .primary {
     grid-column: col 1 / span 4;
@@ -303,6 +360,9 @@ header nav {
     grid-column: col 3 / span 4;
     grid-row: 1;
   }
+  .precontent .inner {
+    padding-bottom: 1rem;
+  }
 
   /* Content */
   .content .primary {
@@ -319,44 +379,32 @@ header nav {
     grid-column: col 1 / span 2;
     grid-row: 1 / span 2;
     margin-bottom: 0;
+    text-align: left;
   }
   header nav {
     grid-column: col 3 / span 4;
     grid-row: 2;
     margin-bottom: 0;
+    margin-top: 2em
+  }
+  header ul {
+    text-align: right;
   }
 }
 
-
-
-/* Precontent */
-.precontent {
-  background-color: white;
-  color: #3494CC
-}
-.precontent .inner{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.precontent .header2 {
-  margin-top: 0
+@media (min-width: 50rem) {
+  .inner  {
+    width: 80%;
+    background: red
+  }
+  header .vestigial {
+    display: inline-block;
+  }
 }
 
-/* Postcontent */
-.postcontent {
-  background-color: #F9E74D;
-  color: black;
-}
-.postcontent a:link,
-.postcontent a:visited,
-.postcontent a:hover,
-.postcontent a:focus,
-.postcontent a:active {
-  color: black;
-}
-
-
-.areamap img {
-  display: block;
-  width: 50%;
+@media (min-width: 60rem) {
+  .inner  {
+    width: 70%;
+    background: yellow
+  }
 }
