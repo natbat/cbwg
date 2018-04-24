@@ -10,17 +10,35 @@
       <h1 class="header1">{{ page.title }}</h1>
       <p class="meta">{{ page.date }}</p>
 
+
+
       <div class="intro">{{ page.intro }}</div>
+
+      {% with page.main_image as main_image %}
+          {% if main_image %}
+            {% image main_image fill-1000x400-c100 as leader_img %}
+            <div class="leader-img">
+              <img src="{{ leader_img.url }}" alt="{{ leader_img.alt }}">
+              <p class="caption">{{ leader_img.alt }}</p>
+            </div>
+          {% endif %}
+      {% endwith %}
+
+
+
 
       {{ page.body|richtext }}
 
-      {% for item in page.gallery_images.all %}
-          <div style="float: left; margin: 10px">
-              {% image item.image fill-320x240 %}
-              <p>{{ item.caption }}</p>
-          </div>
-      {% endfor %}
+      {% if page.gallery_images.count > 1 %}
+        {% for item in page.gallery_images.all %}
+            <div style="float: left; margin: 10px">
+                {% image item.image fill-320x240-c100 %}
+                <p>{{ item.caption }}</p>
+            </div>
+        {% endfor %}
+      {% endif %}
 
+{% comment %}
       {% if page.tags.all.count %}
           <div class="tags">
               <h3>Tags</h3>
@@ -31,6 +49,8 @@
       {% endif %}
 
       <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+
+{% endcomment %}
     </div>
 
 {% endblock %}

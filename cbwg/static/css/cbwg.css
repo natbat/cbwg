@@ -76,6 +76,10 @@ p {
   margin: 0 0 0.75rem 0;
   padding: 0;
 }
+.meta {
+  color: rgba(28,82,113,0.6);
+  font-size: 0.875rem;
+}
 
 h1,
 h2,
@@ -91,7 +95,7 @@ h6 {
 }
 h1,
 .header1 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 0.75rem;
   margin-top: 1rem;
 }
@@ -316,6 +320,20 @@ header nav {
   width: 50%;
 }
 
+.leader-img {
+  margin-bottom: 1.25rem;
+  margin-top: 1rem;
+}
+.caption {
+  text-align: right;
+  font-style: italic;
+  color: rgba(28,82,113,0.6);
+  font-size: 0.875rem;
+}
+.leader-img img {
+  display: block;
+  max-width: 100%;
+}
 
 @media (min-width: 30rem) {
   .intro {
@@ -327,7 +345,10 @@ header nav {
   .intro {
     font-size: 1.25rem
   }
-
+  h1,
+  .header1 {
+    font-size: 3rem;
+  }
   /* Grid setup */
   .inner  {
     grid-gap: 2%;
