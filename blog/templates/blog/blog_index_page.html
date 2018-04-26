@@ -5,29 +5,40 @@
 {% block body_class %}template-blogindexpage{% endblock %}
 
 {% block content %}
-    <div class="primary">
+    <div class="full">
 
       <h1 class="header1">{{ page.title }}</h1>
       <div class="intro">{{ page.intro|richtext }}</div>
 
       {% for post in blogpages %}
         {% with post=post.specific %}
-          <h2 class="header2"><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+          <div class="teaser">
 
-          {% with post.main_image as main_image %}
-              {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
-          {% endwith %}
+            {% with post.main_image as main_image %}
+                {% if main_image %}
+                  {% image main_image fill-1000x400-c100 as teaser_img %}
+                  <div class="teaser-img"><a href="{% pageurl post %}">
+                    <img src="{{ teaser_img.url }}" alt="{{ teaser_img.alt }}">
+                    <h2 class="header2 header">{{ post.title }}</h2>
+                  </a></div>
+                {% else %}
+                  <a href="{% pageurl post %}" class="header"><h2 class="header2">{{ post.title }}</h2></a>
+                {% endif %}
+            {% endwith %}
 
-          <p class="intro">{{ post.intro }}</p>
+            <!-- {% with post.main_image as main_image %}
+                {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+            {% endwith %} -->
 
-          <p><a href="{% pageurl post %}">Read more</a></p>
+            <p class="intro">{{ post.intro }}</p>
 
+            <p><a href="{% pageurl post %}">Read more</a></p>
+
+          </div>
         {% endwith %}
       {% endfor %}
 
+      <!-- TODO: pagination -->
     </div>
 
-    <div class="secondary">
-      <!-- TODO: tag cloud and maybe a calendar -->
-    </div>
 {% endblock %}
