@@ -10,6 +10,8 @@ from wagtail.admin.edit_handlers import FieldPanel
 class HomePage(Page):
     body = RichTextField(blank=True)
 
+    subpage_types = ['blog.BlogIndexPage','home.StaticPage','blog.BlogTagIndexPage']
+
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
     ]
@@ -21,6 +23,9 @@ class HomePage(Page):
 
 class StaticPage(Page):
     body = RichTextField(blank=True)
+
+    parent_page_types = ['home.HomePage', 'home.StaticPage']
+    subpage_types = ['home.StaticPage']
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),

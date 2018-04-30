@@ -16,6 +16,9 @@ from taggit.models import TaggedItemBase
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
 
+    subpage_types = ['blog.BlogPage']
+    parent_page_types = ['home.HomePage']
+
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super(BlogIndexPage, self).get_context(request)
@@ -24,6 +27,9 @@ class BlogIndexPage(Page):
         return context
 
 class BlogTagIndexPage(Page):
+
+    parent_page_types = ['blog.BlogIndexPage']
+    subpage_types = []
 
     def get_context(self, request):
 
@@ -45,6 +51,9 @@ class BlogPage(Page):
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
+
+    parent_page_types = ['blog.BlogIndexPage']
+    subpage_types = []
 
     def main_image(self):
         gallery_item = self.gallery_images.first()

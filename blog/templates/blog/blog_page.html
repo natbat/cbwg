@@ -21,6 +21,8 @@
               <img src="{{ leader_img.url }}" alt="{{ leader_img.alt }}">
               <p class="caption">{{ leader_img.alt }}</p>
             </div>
+          {% else %}
+            <br>
           {% endif %}
       {% endwith %}
 
