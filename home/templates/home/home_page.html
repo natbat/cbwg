@@ -5,12 +5,7 @@
   <section class="precontent wrapper">
     <div class="inner">
       <div class="full">
-        <p class="intro">The California Bat Working Group (CBWG) is composed of
-          individuals dedicated to bat research, education, management, and
-          conservation. Our mission is to facilitate communication regarding
-          bat ecology, distribution, and research techniques, and provide a
-          forum to discuss conservation and management strategies, provide
-          technical assistance, and encourage education.</p>
+        <p class="intro">{{ page.body }}</p>
       </div>
     </div>
   </section>
@@ -20,7 +15,7 @@
 
 {% block content %}
   <div class="primary">
-    <h2 class="header2">CBWG Updates</h2>
+    <h2 class="header2">{{ page.updatesHeader }}</h2>
     {% for entry in self.get_updates %}
       <h3 class="header3">
         <a href="{{ entry.url }}">{{ entry.title }}</a>
@@ -30,7 +25,7 @@
     {% endfor %}
   </div>
   <div class="secondary">
-    <h2 class="header2">Regional groups</h2>
+    <h2 class="header2">{{ page.regionalHeader }}</h2>
     <p class="areamap"><a href="/regional-groups/"><img src="{% static 'img/cal.png' %}" alt="See a list of regional groups"></a></p>
   </div>
 {% endblock %}
@@ -39,10 +34,13 @@
   <section class="postcontent wrapper">
     <div class="inner">
       <div class="primary">
-        <h2 class="header2">Initiatives</h2>
+        <h2 class="header2">{{ page.initiativesHeader }}</h2>
+
+        <!-- TODO: make this editable -->
         <h3><a href="/blog/california-state-bat">California State Bat campaign</a></h3>
         <p>On July 25, 2017, the California State Senate made a resolution to
           recognize the importance of the pallid bat.</p>
+
       </div>
       <div class="secondary">
         <!--<h2 class="header2">Join the community</h2>-->
