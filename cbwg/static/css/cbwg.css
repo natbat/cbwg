@@ -223,6 +223,7 @@ header .logo {
 header .logo img {
   width: 100%;
   max-width: 300px;
+  margin: 0 auto;
 }
 header .logo a:link,
 header .logo a:visited,
@@ -407,6 +408,9 @@ header nav {
     grid-row: 1 / span 2;
     margin-bottom: 0;
     text-align: left;
+  }
+  header .logo img {
+    margin: 0;
   }
   header nav {
     grid-column: col 3 / span 4;
