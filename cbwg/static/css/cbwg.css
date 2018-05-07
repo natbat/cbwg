@@ -85,6 +85,10 @@ a img {
   display: block;
   max-width: 100%;
 }
+img.full-width {
+  display: block;
+  max-width: 100% !important;
+}
 
 h1,
 h2,
