@@ -521,6 +521,7 @@ a.header .header2 {
 .miniteaser .header a:hover,
 .miniteaser .header a:focus,
 .miniteaser .header a:active {
+  display: block;
   text-decoration: none;
   background-color: #3494CC;
   color: white;
