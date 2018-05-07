@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 {% block precontent %}
   <section class="precontent wrapper">
@@ -17,15 +18,29 @@
   <div class="primary">
     <h2 class="header2">{{ page.updatesHeader }}</h2>
     {% for entry in self.get_updates %}
-      <h3 class="header3">
-        <a href="{{ entry.url }}">{{ entry.title }}</a>
-        - {{ entry.blogpage.date }}
-      </h3>
-      <p>{{ entry.blogpage.intro }}</p>
+
+        {% with entry.blogpage.main_image as main_image %}
+          {% if main_image %}
+            {% image main_image fill-200x200-c100 as teaser_img %}
+            <div class="miniteaser miniteaser-media">
+            <img src="{{ teaser_img.url }}" alt="{{ teaser_img.alt }}" class="miniteaser-img">
+          {% else %}
+            <div class="miniteaser">
+          {% endif %}
+        {% endwith %}
+
+        <div class="teaser-content">
+          <h3 class="header header3"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+          <p class="date">{{ entry.blogpage.date }}</p>
+          <p class="body">{{ entry.blogpage.intro }}</p>
+        </div>
+      </div>
     {% endfor %}
+
   </div>
+
   <div class="secondary">
-    <h2 class="header2">{{ page.regionalHeader }}</h2>
+    <h2 class="header2 header">{{ page.regionalHeader }}</h2>
     <p class="areamap"><a href="/regional-groups/"><img src="{% static 'img/cal.png' %}" alt="See a list of regional groups"></a></p>
   </div>
 {% endblock %}

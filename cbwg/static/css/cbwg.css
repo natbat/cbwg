@@ -116,6 +116,7 @@ h2,
 }
 h3,
 .header3 {
+  font-size: 1.25rem;
   margin: 1rem 0 0.25rem 0;
 }
 h4,
@@ -506,4 +507,49 @@ a.header .header2 {
 .teaser-img a:focus .header,
 .teaser-img a:active .header {
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+.miniteaser {
+  margin-bottom: 1rem;
+  padding-top: 1px;
+}
+.miniteaser .header {
+  margin: 0.3rem 0 0.3rem 0;
+}
+.miniteaser .header a:link,
+.miniteaser .header a:visited,
+.miniteaser .header a:hover,
+.miniteaser .header a:focus,
+.miniteaser .header a:active {
+  text-decoration: none;
+  background-color: #3494CC;
+  color: white;
+  padding: 0.3rem 0.5rem;
+}
+.miniteaser .header a:hover,
+.miniteaser .header a:focus,
+.miniteaser .header a:active {
+  color: white;
+  background-color: #1C5271;
+}
+.miniteaser .date {
+  font-size: 0.875rem;
+  color: #3494CC;
+  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+}
+.miniteaser-media {
+  display: grid;
+  grid-template-columns: repeat(4, [col] 25% );
+}
+.miniteaser-media .miniteaser-img {
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+}
+.miniteaser-media .teaser-content {
+  grid-column: 2 /span 3;
+  grid-row: 1;
+  padding-left: 1rem
 }
