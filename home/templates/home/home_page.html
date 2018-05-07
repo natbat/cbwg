@@ -41,6 +41,7 @@
 
   <div class="secondary">
     <h2 class="header2 header">{{ page.regionalHeader }}</h2>
+    {{ page.regionalBody|richtext }}
     <p class="areamap"><a href="/regional-groups/"><img src="{% static 'img/cal.png' %}" alt="See a list of regional groups"></a></p>
   </div>
 {% endblock %}
@@ -50,15 +51,11 @@
     <div class="inner">
       <div class="primary">
         <h2 class="header2">{{ page.initiativesHeader }}</h2>
-
-        <!-- TODO: make this editable -->
-        <h3><a href="/blog/california-state-bat">California State Bat campaign</a></h3>
-        <p>On July 25, 2017, the California State Senate made a resolution to
-          recognize the importance of the pallid bat.</p>
+        {{ page.intitiativesBody|richtext }}
 
       </div>
       <div class="secondary">
-        <!--<h2 class="header2">Join the community</h2>-->
+        {{ page.secondaryBody|richtext }}
       </div>
     </div>
   </section>
