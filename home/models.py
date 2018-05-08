@@ -10,6 +10,7 @@ from wagtail.admin.edit_handlers import FieldPanel
 class HomePage(Page):
     body = models.CharField(max_length=500, default='The California Bat Working Group (CBWG) is composed of individuals dedicated to bat research, education, management, and conservation. Our mission is to facilitate communication regarding bat ecology, distribution, and research techniques, and provide a forum to discuss conservation and management strategies, provide technical assistance, and encourage education.')
     updatesHeader = models.CharField(max_length=100, default='CBWG Updates')
+    updatesMore = models.CharField(max_length=100, default='See all updates')
     regionalHeader = models.CharField(max_length=100, default='Regional groups')
     regionalBody = RichTextField(blank=True, null=True)
     initiativesHeader = models.CharField(max_length=100, default='Initiatives')
@@ -24,6 +25,7 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
          FieldPanel('body', classname="full"),
          FieldPanel('updatesHeader', classname="full"),
+         FieldPanel('updatesMore', classname="full"),
          FieldPanel('regionalHeader', classname="full"),
          FieldPanel('regionalBody', classname="full"),
          FieldPanel('initiativesHeader', classname="full"),
