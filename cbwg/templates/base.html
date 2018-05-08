@@ -5,7 +5,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>
@@ -30,20 +30,23 @@
         {% endblock %}
 
         <meta property="og:title" content="The California Bat Working Group">
-        <meta property="og:image" content="https://www.calbatwg.org/{% static 'img/media.png' %}">
+        <meta property="og:url" content="{{ request.build_absolute_uri }}">
+
+        <meta property="og:site_name" content="The California Bat Working Group">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="{{ request.scheme }}{{ request.get_host }}{% static 'img/media.png' %}">
         <meta property="og:description" content="The California Bat Working Group (CBWG) is composed of individuals dedicated to bat research, education, management, and conservation. Our mission is to facilitate communication regarding bat ecology, distribution, and research techniques, and provide a forum to discuss conservation and management strategies, provide technical assistance, and encourage education.">
 
         <!-- Social media sharing image includes photo of bats by USFWS /
           Ann Froschauer and is in the public domain
-          https://commons.wikimedia.org/wiki/File:Mexican_free-tailed_bats_(9413220937).jpg -->
+          https://commons.wikimedia.org/wiki/File:Mexican_free-tailed_bats_(9413220937).jpg
+          Image editing and logo design by Natalie Downe -->
 
         <!-- <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@nytimesbits" />
         <meta name="twitter:creator" content="@nickbilton" /> -->
 
-        <!-- <meta property="og:url" content="/" /> -->
-
-        <!-- og:url, og:type, og:title, og:image, og:description, fb:app_id -->
+        <!-- fb:app_id -->
 
         <!-- Logo and favicon designed by Natalie Downe -->
         <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-icon-57x57.png' %}">
