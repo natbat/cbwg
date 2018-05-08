@@ -29,6 +29,22 @@
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
 
+        <meta property="og:title" content="The California Bat Working Group">
+        <meta property="og:image" content="{% static 'img/media.png' %}">
+        <meta property="og:description" content="The California Bat Working Group (CBWG) is composed of individuals dedicated to bat research, education, management, and conservation. Our mission is to facilitate communication regarding bat ecology, distribution, and research techniques, and provide a forum to discuss conservation and management strategies, provide technical assistance, and encourage education.">
+
+        <!-- Social media sharing image includes photo of bats by USFWS /
+          Ann Froschauer and is in the public domain
+          https://commons.wikimedia.org/wiki/File:Mexican_free-tailed_bats_(9413220937).jpg -->
+
+        <!-- <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@nytimesbits" />
+        <meta name="twitter:creator" content="@nickbilton" /> -->
+
+        <!-- <meta property="og:url" content="/" /> -->
+
+        <!-- og:url, og:type, og:title, og:image, og:description, fb:app_id -->
+
         <!-- Logo and favicon designed by Natalie Downe -->
         <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-icon-57x57.png' %}">
         <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/apple-icon-60x60.png' %}">
@@ -47,18 +63,6 @@
         <meta name="msapplication-TileColor" content="#3494CC">
         <meta name="msapplication-TileImage" content="{% static 'img/favicon/ms-icon-144x144.png' %}">
         <meta name="theme-color" content="#ffffff">
-
-        <!-- Social media sharing image includes photo of bats by USFWS /
-          Ann Froschauer and is in the public domain
-          https://commons.wikimedia.org/wiki/File:Mexican_free-tailed_bats_(9413220937).jpg -->
-
-          <!-- <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@nytimesbits" />
-          <meta name="twitter:creator" content="@nickbilton" /> -->
-          <meta property="og:title" content="The California Bat Working Group" />
-          <meta property="og:image" content="{% static 'img/media.png' %}" />
-          <meta property="og:description" content="The California Bat Working Group (CBWG) is composed of individuals dedicated to bat research, education, management, and conservation. Our mission is to facilitate communication regarding bat ecology, distribution, and research techniques, and provide a forum to discuss conservation and management strategies, provide technical assistance, and encourage education." />
-          <!-- <meta property="og:url" content="/" /> -->
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
