@@ -88,6 +88,7 @@ a img {
 img.full-width {
   display: block;
   max-width: 100% !important;
+	height: auto !important;
 }
 .rich-text ul,
 .rich-text ol {
