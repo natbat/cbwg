@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+  <div class="full">
+    {% if page.title %}<h1 class="header header1">{{ page.title }}</h1>{% endif %}
+
+    {% if page.intro %}<p class="intro">{{ page.intro }}</p>{% endif %}
+
+    {% if page.body %}{{ page.body|richtext }}{% endif %}
+
+  </div>
+{% endblock %}
+
+{% block postcontent %}
+  {% if page.embedSRC %}<section class="postcontent wrapper">
+    <div class="inner">
+      <div class="full">
+        {% if page.embedTitle %}<h2 class="header header1">{{ page.embedTitle }}</h2>{% endif %}
+        {% if page.embedIntro %}<p class="intro">{{ page.embedIntro }}</p>{% endif %}
+
+        {% if page.embedBody %}{{ page.embedBody|richtext }}{% endif %}
+        <!-- https://docs.google.com/spreadsheets/d/e/2PACX-1vRUX0m5jp2RPho5xZc0MISbfGE5kPewj9CFLn1OysI_obYswIl7CX2JBDUtecIGqsNvqFtTd1an6PE6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false -->
+        <iframe src="{{ page.embedSRC }}" style="width:100%; height: 50rem; border: 5px solid #3494CC; box-sizing: border-box; margin-bottom: 2rem; margin-top: 2rem;"></iframe>
+    </div>
+  </section>{% endif %}
+{% endblock %}

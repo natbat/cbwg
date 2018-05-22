@@ -20,7 +20,7 @@ class HomePage(Page):
     # TODO find a way to link to blog entries or static pages perhaps
     # and have them be overridable with header and intro
 
-    subpage_types = ['blog.BlogIndexPage','home.StaticPage','blog.BlogTagIndexPage']
+    subpage_types = ['blog.BlogIndexPage','home.StaticPage','home.ResourcePage','blog.BlogTagIndexPage']
 
     content_panels = Page.content_panels + [
          FieldPanel('body', classname="full"),
@@ -41,9 +41,30 @@ class HomePage(Page):
 class StaticPage(Page):
     body = RichTextField(blank=True)
 
-    parent_page_types = ['home.HomePage', 'home.StaticPage']
-    subpage_types = ['home.StaticPage']
+    parent_page_types = ['home.HomePage', 'home.StaticPage','home.ResourcePage']
+    subpage_types = ['home.StaticPage','home.ResourcePage']
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
+    ]
+
+
+class ResourcePage(Page):
+    body = RichTextField(blank=True, null=True)
+    intro = models.CharField(max_length=250, null=True, blank=True)
+    embedTitle = models.CharField(max_length=250, null=True, blank=True)
+    embedIntro = models.CharField(max_length=250, null=True, blank=True)
+    embedBody = RichTextField(blank=True, null=True)
+    embedSRC = models.CharField(max_length=400, null=True, blank=True)
+
+    parent_page_types = ['home.HomePage', 'home.StaticPage','home.ResourcePage']
+    subpage_types = ['home.StaticPage','home.ResourcePage']
+
+    content_panels = Page.content_panels + [
+        FieldPanel('intro', classname="full"),
+        FieldPanel('body', classname="full"),
+        FieldPanel('embedTitle', classname="full"),
+        FieldPanel('embedIntro', classname="full"),
+        FieldPanel('embedBody', classname="full"),
+        FieldPanel('embedSRC', classname="full"),
     ]

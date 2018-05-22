@@ -324,7 +324,7 @@ header nav {
 
 /* Postcontent */
 .postcontent {
-  background-color: #F9E74D;
+  background-color: #FAEE88;
   color: black;
 }
 .postcontent a:link,
@@ -499,7 +499,7 @@ a.header:active {
 a.header:hover,
 a.header:focus,
 a.header:active {
-  background-color: #F9E74D
+  background-color: #FAEE88
 }
 a.header .header2 {
   margin: 0;
@@ -564,4 +564,12 @@ a.header .header2 {
   grid-column: 2 /span 3;
   grid-row: 1;
   padding-left: 1rem
+}
+
+.iframe {
+	width: 100%;
+	height: 50rem;
+	border: 5px solid #3494CC;
+	box-sizing: border-box;
+	margin-bottom: 2rem;
 }
