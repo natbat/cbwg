@@ -363,6 +363,27 @@ header nav {
   display: block;
   max-width: 100%;
 }
+a.join:link,
+a.join:visited,
+a.join:hover,
+a.join:focus,
+a.join:active {
+	display: block;
+	background-color: #1C5271;
+	border: 1px solid white;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-top: 1rem;
+	padding: 0.5rem;
+	text-align: center;
+}
+a.join:hover,
+a.join:focus,
+a.join:active {
+	background-color: #3494CC
+}
 
 @media (min-width: 30rem) {
   .intro {
