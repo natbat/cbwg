@@ -211,6 +211,9 @@ header li:last-child {
 header .vestigial {
   display: none;
 }
+header .vest-last {
+	margin-right: 0;
+}
 header nav a:link,
 header nav a:visited,
 header nav a:hover,
@@ -235,6 +238,9 @@ header nav a.active {
 }
 header .logo {
   text-align: center;
+	display: block;
+	padding-bottom: 0.7rem;
+	padding-top: 0.7rem;
 }
 header .logo img {
   width: 100%;
@@ -447,6 +453,9 @@ header nav {
   header .vestigial {
     display: inline-block;
   }
+	header .vest-last {
+		margin-right: 0.875rem;
+	}
 }
 
 @media (min-width: 60rem) {
