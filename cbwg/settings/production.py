@@ -1,5 +1,5 @@
 from __future__ import absolute_import, unicode_literals
-import django_heroku
+import dj_database_url
 import os
 from .base import *
 
@@ -10,7 +10,15 @@ try:
 except ImportError:
     pass
 
-SECURE_SSL_REDIRECT = True
+ALLOWED_HOSTS = ["*"]
+
+SECRET_KEY = os.environ["SECRET_KEY"]
+
+if "DATABASE_URL" in os.environ:
+    # Configure Django for DATABASE_URL environment variable.
+    DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+
+# SECURE_SSL_REDIRECT = True
 
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
@@ -21,6 +29,3 @@ if SENTRY_DSN:
         'dsn': SENTRY_DSN,
         'release': os.environ.get('HEROKU_SLUG_COMMIT', ''),
     }
-
-
-django_heroku.settings(locals())
