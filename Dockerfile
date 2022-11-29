@@ -5,12 +5,10 @@ WORKDIR /app
 
 COPY . .
 
-ENV PIPENV_VENV_IN_PROJECT=1
-
 RUN pip install pipenv
-RUN pipenv sync
+RUN pipenv sync --system
 
-RUN pipenv run ./manage.py collectstatic --noinput
+RUN ./manage.py collectstatic --noinput
 
 EXPOSE 8000
 
